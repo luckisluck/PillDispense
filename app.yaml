@@ -1,7 +1,7 @@
 runtime: php55
 api_version: 1
 handlers:
-- url: /.*
+- url: /code
   script: Codetest.php
 - url: /linktest.php
   script: linktest.php
