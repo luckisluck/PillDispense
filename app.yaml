@@ -3,3 +3,5 @@ api_version: 1
 handlers:
 - url: /.*
   script: Codetest.php
+- url: /linktest.php
+  script: linktest.php
