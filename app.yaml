@@ -1,7 +1,15 @@
 runtime: php55
 api_version: 1
+env_variables:
+  # Replace project, instance, database, user and password with the values obtained
+  # when configuring your Cloud SQL instance.
+  MYSQL_DSN: mysql:unix_socket=/cloudsql/weighty-beach-183107:australia-southeast1:pilldispenser1;dbname=pilldispenser
+  MYSQL_USER: root
+  MYSQL_PASSWORD: ''
 handlers:
 - url: /code
   script: Codetest.php
 - url: /linktest.php
   script: linktest.php
+- url: /add.php
+  script: add.php
