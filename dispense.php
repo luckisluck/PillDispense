@@ -15,7 +15,7 @@ catch(PDOException $e)
     }
 
  // Check whether username or password is set from android
-     echo "Hello";	
+    	
      if(isset($_POST['dispenseX']))
      {
 		  // Innitialize Variable
@@ -32,7 +32,45 @@ catch(PDOException $e)
             {
             $result= "false";
             }
+		   echo $result;
+  	}
+
+    if(isset($_POST['dispenseY']))
+     {
+		  // Innitialize Variable
+		  $result='';
+	   	  $dispenseY = $_POST['dispenseY'];
 		  
+		  // Query database for row exist or not
+          $sql = "INSERT INTO dispense (dispenseY) VALUES ('$dispenseY')";
+          if ($conn->query($sql) === TRUE) 
+            {
+            $result="true";
+            } 
+            else 
+            {
+            $result= "false";
+            }
+		  echo $result;
+  	}
+
+    if(isset($_POST['dispenseZ']))
+     {
+		  // Innitialize Variable
+		  $result='';
+	   	  $dispenseZ = $_POST['dispenseZ'];
+		  
+		  // Query database for row exist or not
+          $sql = "INSERT INTO dispense (dispenseZ) VALUES ('$dispenseZ')";
+          if ($conn->query($sql) === TRUE) 
+            {
+            $result="true";
+            } 
+            else 
+            {
+            $result= "false";
+            }
+		  echo $result;
   	}
 
 ?>
