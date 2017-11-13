@@ -23,7 +23,7 @@ catch(PDOException $e)
           $password = $_POST['password'];
 		  
 		  // Query database for row exist or not
-          $sql = 'SELECT * FROM tbl_login WHERE  email = :username AND password = :password';
+          $sql = 'SELECT * FROM user WHERE  email = :username AND password = :password';
           $stmt = $conn->prepare($sql);
           $stmt->bindParam(':username', $username, PDO::PARAM_STR);
           $stmt->bindParam(':password', $password, PDO::PARAM_STR);

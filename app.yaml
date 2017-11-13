@@ -9,6 +9,8 @@ env_variables:
 handlers:
 - url: /code
   script: Codetest.php
+- url: /login.php
+  script: login.php  
 - url: /linktest.php
   script: linktest.php
 - url: /add.php
