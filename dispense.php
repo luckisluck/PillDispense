@@ -22,7 +22,7 @@ catch(PDOException $e)
 	   	  $dispenseX = $_POST['dispenseX'];
 		  
 		  // Query database for row exist or not
-          $sql = "INSERT INTO dispense (dispenseX)VALUES (:dispenseX)";
+          $sql = "INSERT INTO dispense (dispenseX)VALUES ('$dispenseX')";
           if ($conn->query($sqli) === TRUE) 
             {
             echo "X successfully";
