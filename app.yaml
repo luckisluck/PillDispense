@@ -15,3 +15,5 @@ handlers:
   script: linktest.php
 - url: /add.php
   script: add.php
+- url: /dispense.php
+  script: dispense.php
