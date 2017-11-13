@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 }
 
 // sql to create table
-$sql = "CREATE TABLE user (
+$sql = "CREATE TABLE dispense (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 dispenseX VARCHAR(30),
 dispenseY VARCHAR(30),
