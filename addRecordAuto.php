@@ -5,20 +5,23 @@ $username = "test";
 $password = "test";
 $dbname = "pilldispenser";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$con=mysqli_connect($servername,$username,$password,$dbname);
 // Check connection
-if ($conn->connect_error) {
-    $result= die("Connection failed: " . $conn->connect_error);
-} 
+if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+
 
  // Check whether username or password is set from android
     	
-     
+     if(isset($_POST['name']) && $_POST['startTime']) && $_POST['endTime']) )
+     {
 		  // Innitialize Variable
 		  $result='';
-	   	  $name = '5';
-          $startTime = '05:00';
-          $endTime = '05:00';
+	   	  $name = $_POST['name'];
+          $startTime = $_POST['startTime'];
+          $endTime = $_POST['endTime'];
           $pillAmt = '5';
    //       $table = $_POST['table'];
 		  $table='dispenseauto_X';
@@ -33,5 +36,5 @@ if ($conn->connect_error) {
             $result= "false";
             }
 		   echo $result;
-  	
+  	}
 ?>
