@@ -15,17 +15,17 @@ if (mysqli_connect_errno())
 
  // Check whether username or password is set from android
     	
-     if(isset($_POST['name']))
+     if(isset($_POST['name']) && isset($_POST['startTime']) && isset($_POST['endTime']) && isset($_POST['pillAmt']) && isset($_POST['table']))
      {
 		  // Innitialize Variable
 		  $result='';
 	   	  $name = $_POST['name'];
-          $startTime = '10:00';
-          $endTime ='11:00';
-          $pillAmt = '5';
-   //       $table = $_POST['table'];
-		  $table='dispenseauto_X';
-		  // Query database for row exist or not
+          $startTime = $_POST['startTime'];
+          $endTime =$_POST['endTime'];
+          $pillAmt $_POST['pillAmt'];
+          $table = $_POST['table'];
+		  
+
           $sql = "INSERT INTO $table (timeName,startTime,endTime,pillAmt) VALUES ('$name','$startTime','$endTime','$pillAmt')";
           if ($con->query($sql) === TRUE) 
             {
