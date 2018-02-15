@@ -12,9 +12,6 @@ if (mysqli_connect_errno())
   $a= "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 
-
- 
-		        $result=;
             $timeName='test';
             $startTime='00:00:00';
             $endTime='06:00:00';
