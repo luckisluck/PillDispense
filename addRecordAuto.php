@@ -5,14 +5,11 @@ $username = "test";
 $password = "test";
 $dbname = "pilldispenser";
 
-try {
-    	$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    }
-catch(PDOException $e)
-    {
-    	die("OOPs something went wrong");
-    }
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    $result= die("Connection failed: " . $conn->connect_error);
+} 
 
  // Check whether username or password is set from android
     	
@@ -27,7 +24,7 @@ catch(PDOException $e)
           $table = $_POST['table'];
 		  
 		  // Query database for row exist or not
-          $sql = "INSERT INTO '$table' (timeName,startTime,endTime,pillAmt) VALUES ('$name','$startTime','$endTime','$pillAmt')";
+          $sql = "INSERT INTO $table (timeName,startTime,endTime,pillAmt) VALUES ('$name','$startTime','$endTime','$pillAmt')";
           if ($conn->query($sql) === TRUE) 
             {
             $result="true";
