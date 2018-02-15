@@ -15,17 +15,17 @@ if (mysqli_connect_errno())
 
  // Check whether username or password is set from android
     	
-     if(isset($_POST['name']) && isset($_POST['startTime']) )
+     if(isset($_POST['name'])  )
      {
 		  // Innitialize Variable
 		  $result='';
 	   	  $name = $_POST['name'];
-          $startTime = $_POST['startTime'];
+         // $startTime = $_POST['startTime'];
         //  $endTime =$_POST['endTime'];
         //  $pillAmt $_POST['pillAmt'];
         //  $table = $_POST['table'];
 		  
-         // $startTime = '00:00';
+          $startTime = '00:00';
           $endTime ='00:20';
           $pillAmt '3';
           $table = 'dispenseauto_X';
