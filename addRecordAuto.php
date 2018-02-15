@@ -5,20 +5,20 @@ $username = "test";
 $password = "test";
 $dbname = "pilldispenser";
 
-$con=mysqli_connect($servername,$username,$password,$dbname);
-// Check connection
-if (mysqli_connect_errno())
-  {
-  $result = "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
+try {
+    	$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }
+catch(PDOException $e)
+    {
+    	die("OOPs something went wrong");
+    }
 
-
- // Check whether username or password is set from android
-    	
-     if(isset($_POST['name']))
+ if(isset($_POST['dispenseX']))
      {
-		  // Innitialize Variable
-		  $result='';
+
+		    // Innitialize Variable
+		    $result='';
 	   	  $name = $_POST['name'];
          // $startTime = $_POST['startTime'];
         //  $endTime =$_POST['endTime'];
@@ -30,8 +30,8 @@ if (mysqli_connect_errno())
           $pillAmt '3';
           $table = 'dispenseauto_X';
 
-          $sql = "INSERT INTO $table (timeName,startTime,endTime,pillAmt) VALUES ('$name','$startTime','$endTime','$pillAmt')";
-          if ($con->query($sql) === TRUE) 
+          $sql = "INSERT INTO dispenseauto_X (timeName,startTime,endTime,pillAmt) VALUES ('$name','$startTime','$endTime','$pillAmt')";
+          if ($conn->query($sql) === TRUE) 
             {
             $result="true";
             } 
@@ -40,5 +40,7 @@ if (mysqli_connect_errno())
             $result= "false";
             }
 		   echo $result;
+  
   	}
+
 ?>
