@@ -30,5 +30,6 @@ if (mysqli_connect_errno())
                         $results= "false";
                         }
                   
+                  echo $result;
 
 ?>
