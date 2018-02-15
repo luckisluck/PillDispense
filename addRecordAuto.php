@@ -12,7 +12,9 @@ if (mysqli_connect_errno())
   $a= "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 
-            $timeName='test';
+          if(isset($_POST['name']))
+            {
+            $timeName= $_POST['name'];
             $startTime='00:00:00';
             $endTime='06:00:00';
             $pillAmt='1';
@@ -28,5 +30,5 @@ if (mysqli_connect_errno())
                         }
                   
                   echo $result;
-
+            }
 ?>
