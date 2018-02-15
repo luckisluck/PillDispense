@@ -14,7 +14,7 @@ catch(PDOException $e)
     	die("OOPs something went wrong");
     }
 
- if(isset($_POST['dispenseX']))
+ if(isset($_POST['name']))
      {
 
 		    // Innitialize Variable
