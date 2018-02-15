@@ -1,46 +1,35 @@
 <?php
-
+date_default_timezone_set('Asia/Bangkok');
 $servername = "35.189.32.80";
 $username = "test";
 $password = "test";
 $dbname = "pilldispenser";
 
-try {
-    	$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    }
-catch(PDOException $e)
-    {
-    	die("OOPs something went wrong");
-    }
+$con=mysqli_connect($servername,$username,$password,$dbname);
+// Check connection
+if (mysqli_connect_errno())
+  {
+  $a= "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+
 
  if(isset($_POST['name']))
-     {
-
-		    // Innitialize Variable
-		    $result='';
-	   	  $name = $_POST['name'];
-         // $startTime = $_POST['startTime'];
-        //  $endTime =$_POST['endTime'];
-        //  $pillAmt $_POST['pillAmt'];
-        //  $table = $_POST['table'];
-		  
-          $startTime = '00:00';
-          $endTime ='00:20';
-          $pillAmt '3';
-          $table = 'dispenseauto_X';
-
-          $sql = "INSERT INTO dispenseauto_X (timeName,startTime,endTime,pillAmt) VALUES ('$name','$startTime','$endTime','$pillAmt')";
-          if ($conn->query($sql) === TRUE) 
             {
-            $result="true";
-            } 
-            else 
-            {
-            $result= "false";
-            }
-		   echo $result;
-  
-  	}
+		        $result=;
+            $timeName=$_POST['name'];
+            $startTime='00:00:00';
+            $endTime='06:00:00';
+            $pillAmt='1';
+          
+                  $insertX ="INSERT INTO dispenseauto_X (timeName,startTime,endTime,pillAmt) VALUES ('$timeName','$startTime','$endTime','$pillAmt')";
+                  if ($con->query($insertX) === TRUE) 
+                        {
+                        $results="true";
+                        } 
+                  else 
+                        {
+                        $results= "false";
+                        }
+                  }
 
 ?>
