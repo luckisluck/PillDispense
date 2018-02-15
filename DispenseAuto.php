@@ -1,5 +1,4 @@
 <?php
-echo date_default_timezone_get();
 date_default_timezone_set('Asia/Bangkok');
 $servername = "35.189.32.80";
 $username = "test";
@@ -15,14 +14,13 @@ if (mysqli_connect_errno())
 
  // Check whether username or password is set from android
     $time=  date("H:i:00");
-    echo $time;
     
      if(isset($_POST['dispense']))
             {
 		$result='';
 		  
 		  // Query database for row exist or not
-            $sql = "SELECT * from dispenseauto_X where time(startTime) <= time('$time') AND time(endTime) >= time('$time') ";
+            $sql = "SELECT pillAmt from dispenseauto_X where time(startTime) <= time('$time') AND time(endTime) >= time('$time') ";
             $result = $con->query($sql);
             if (mysqli_num_rows($result) > 0) 
                   {
@@ -42,14 +40,14 @@ if (mysqli_connect_errno())
                   }
             else
                   {
-                  $result="unsucessful";
+                  $result="false";
                   }
 
 
 
 
 
-            $sql = "SELECT * from dispenseauto_Y where time(startTime) <= time('$time') AND time(endTime) >= time('$time') ";
+            $sql = "SELECT pillAmt from dispenseauto_Y where time(startTime) <= time('$time') AND time(endTime) >= time('$time') ";
             $result = $con->query($sql);
             if (mysqli_num_rows($result) > 0) 
                   {
@@ -69,14 +67,14 @@ if (mysqli_connect_errno())
                   }
             else
                   {
-                  $result="unsucessful";
+                  $result="false";
                   }
 
          
 
 
 
-         $sql = "SELECT * from dispenseauto_Z where time(startTime) <= time('$time') AND time(endTime) >= time('$time') ";
+         $sql = "SELECT pillAmt from dispenseauto_Z where time(startTime) <= time('$time') AND time(endTime) >= time('$time') ";
             $result = $con->query($sql);
             if (mysqli_num_rows($result) > 0) 
                   {
@@ -97,10 +95,10 @@ if (mysqli_connect_errno())
                   }
             else
                   {
-                  $result="unsucessful";
+                  $result="false";
                   }
-		 
+	echo result;
   	}
 
-$con->close();
+
 ?>
