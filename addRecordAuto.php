@@ -13,10 +13,9 @@ if (mysqli_connect_errno())
   }
 
 
- if(isset($_POST['name']))
-            {
+ 
 		        $result=;
-            $timeName=$_POST['name'];
+            $timeName='test';
             $startTime='00:00:00';
             $endTime='06:00:00';
             $pillAmt='1';
@@ -30,6 +29,6 @@ if (mysqli_connect_errno())
                         {
                         $results= "false";
                         }
-                  }
+                  
 
 ?>
