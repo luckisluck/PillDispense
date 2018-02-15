@@ -13,13 +13,12 @@ if ($conn->connect_error) {
 
  // Check whether username or password is set from android
     	
-     if(isset($_POST['name']) && $_POST['startTime']) && $_POST['endTime']) )
-     {
+     
 		  // Innitialize Variable
 		  $result='';
-	   	  $name = $_POST['name'];
-          $startTime = $_POST['startTime'];
-          $endTime = $_POST['endTime'];
+	   	  $name = '5';
+          $startTime = '05:00';
+          $endTime = '05:00';
           $pillAmt = '5';
    //       $table = $_POST['table'];
 		  $table='dispenseauto_X';
@@ -34,5 +33,5 @@ if ($conn->connect_error) {
             $result= "false";
             }
 		   echo $result;
-  	}
+  	
 ?>
