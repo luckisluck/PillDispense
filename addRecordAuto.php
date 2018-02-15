@@ -12,14 +12,15 @@ if (mysqli_connect_errno())
   $a= "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 
-          if(  (isset($_POST['name'])) && (isset($_POST['startTime'])) )
+          if(  (isset($_POST['name'])) && (isset($_POST['startTime']))  && (isset($_POST['endTime']))   && (isset($_POST['pillAmt']))   && (isset($_POST['table'])) )
             {
             $timeName= $_POST['name'];
             $startTime=$_POST['startTime'];
-            $endTime='06:00:00';
-            $pillAmt='1';
+            $endTime= $_POST['endTime'];
+            $pillAmt= $_POST['pillAmt'];
+            $table= $_POST['table'];
           
-                  $insertX ="INSERT INTO dispenseauto_X (timeName,startTime,endTime,pillAmt) VALUES ('$timeName','$startTime','$endTime','$pillAmt')";
+                  $insertX ="INSERT INTO $table (timeName,startTime,endTime,pillAmt) VALUES ('$timeName','$startTime','$endTime','$pillAmt')";
                   if ($con->query($insertX) === TRUE) 
                         {
                         $results="true";
