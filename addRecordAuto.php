@@ -19,7 +19,7 @@ if (mysqli_connect_errno())
      {
 		  // Innitialize Variable
 		  $result='';
-	   	  $name = $_POST['dispense'];
+	   	  $name = $_POST['name'];
           $startTime = '10:00';
           $endTime ='11:00';
           $pillAmt = '5';
