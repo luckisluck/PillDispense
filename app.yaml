@@ -17,3 +17,5 @@ handlers:
   script: add.php
 - url: /dispense.php
   script: dispense.php
+- url: /DispenseAuto.php
+  script: DispenseAuto.php
