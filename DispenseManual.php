@@ -12,12 +12,13 @@ if (mysqli_connect_errno())
   $a= "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 
-          if( (isset($_POST['pillAmt']))   && (isset($_POST['table'])) )
+          if( (isset($_POST['pillAmt']))   && (isset($_POST['table'])) && (isset($_POST['Cname'])) )
             {
             $pillAmt= $_POST['pillAmt'];
             $table= $_POST['table'];
+            $Cname= $_POST['Cname'];
           
-                  $insertX ="INSERT INTO $table (pillAmt_X) VALUES ('$pillAmt')";
+                  $insertX ="INSERT INTO $table ('$Cname') VALUES ('$pillAmt')";
                   if ($con->query($insertX) === TRUE) 
                         {
                         $results="true";
