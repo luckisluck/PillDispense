@@ -21,3 +21,5 @@ handlers:
   script: DispenseAuto.php
 - url: /addRecordAuto.php
   script: addRecordAuto.php
+- url: /DispenseManual.php
+  script: DispenseManual.php
