@@ -18,7 +18,7 @@ if (mysqli_connect_errno())
             $table= $_POST['table'];
             $Cname= $_POST['Cname'];
           
-                  $insertX ="INSERT INTO $table ('$Cname') VALUES ('$pillAmt')";
+                  $insertX ="INSERT INTO $table ($Cname) VALUES ('$pillAmt')";
                   if ($con->query($insertX) === TRUE) 
                         {
                         $results="true";
