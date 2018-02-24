@@ -45,7 +45,7 @@ if (mysqli_connect_errno())
 
 
 
-            $sql = "SELECT pillAmt FROM dispenseauto_X where startTime <= '$time' AND endTime >='$time'";
+            $sql = "SELECT pillAmt FROM dispenseauto_Y where startTime <= '$time' AND endTime >='$time'";
             $result1 = $con->query($sql);
             if (mysqli_num_rows($result1) > 0) 
                   {
@@ -72,7 +72,7 @@ if (mysqli_connect_errno())
 
 
 
-         $sql = "SELECT pillAmt FROM dispenseauto_X where startTime <= '$time' AND endTime >='$time'";
+         $sql = "SELECT pillAmt FROM dispenseauto_Z where startTime <= '$time' AND endTime >='$time'";
             $result2 = $con->query($sql);
             if (mysqli_num_rows($result2) > 0) 
                   {
