@@ -28,16 +28,16 @@ if (mysqli_connect_errno())
                   $insertX ="INSERT INTO dispenseX_auto (pillAmt_X) VALUES ('$getAmt')";
                   if ($con->query($insertX) === TRUE) 
                         {
-                        $resultss="true";
+                        $resultss="added to DB";
                         } 
                   else 
                         {
-                        $resultss= "false";
+                        $resultss= "unable to add wa";
                         }
                   }
             else
                   {
-                  $result="false";
+                  $result="num row 0";
                   }
 
 
