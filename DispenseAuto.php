@@ -17,7 +17,7 @@ if (mysqli_connect_errno())
     echo $time;
      		  
 		  // Query database for row exist or not
-            $sql = "SELECT pillAmt from dispenseauto_X where time(startTime) <= time('$time') AND time(endTime) >= time('$time') ";
+            $sql = "SELECT pillAmt from dispenseauto_X where time(startTime) >= time('$time') AND time(endTime) <= time('$time') ";
             $result = $con->query($sql);
             if (mysqli_num_rows($result) > 0) 
                   {
