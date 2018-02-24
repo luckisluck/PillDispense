@@ -45,26 +45,26 @@ if (mysqli_connect_errno())
 
 
             $sql = "SELECT pillAmt from dispenseauto_Y where time(startTime) <= time('$time') AND time(endTime) >= time('$time') ";
-            $result = $con->query($sql);
-            if (mysqli_num_rows($result) > 0) 
+            $result1 = $con->query($sql);
+            if (mysqli_num_rows($result1) > 0) 
                   {
-                  while($row = mysqli_fetch_assoc($result))
+                  while($row1 = mysqli_fetch_assoc($result1))
                   {
-                  $getAmt=$row["pillAmt"];
+                  $getAmt1=$row1["pillAmt"];
                   }   
-                  $insertX ="INSERT INTO dispenseY_auto (pillAmt_Y) VALUES ('$getAmt')";
-                  if ($con->query($insertX) === TRUE) 
+                  $insertY ="INSERT INTO dispenseY_auto (pillAmt_Y) VALUES ('$getAmt1')";
+                  if ($con->query($insertY) === TRUE) 
                         {
-                        $resultss="true";
+                        $results2="true";
                         } 
                   else 
                         {
-                        $resultss= "false";
+                        $results2= "false";
                         }
                   }
             else
                   {
-                  $result="false";
+                  $result1="false";
                   }
 
          
@@ -72,30 +72,31 @@ if (mysqli_connect_errno())
 
 
          $sql = "SELECT pillAmt from dispenseauto_Z where time(startTime) <= time('$time') AND time(endTime) >= time('$time') ";
-            $result = $con->query($sql);
-            if (mysqli_num_rows($result) > 0) 
+            $result2 = $con->query($sql);
+            if (mysqli_num_rows($result2) > 0) 
                   {
-                  while($row = mysqli_fetch_assoc($result))
+                  while($row2 = mysqli_fetch_assoc($result2))
                   {
-                  $getAmt=$row["pillAmt"];
+                  $getAmt2=$row2["pillAmt"];
                   }   
-                  $insertX ="INSERT INTO dispenseZ_auto (pillAmt_Z) VALUES ('$getAmt')";
-                  if ($con->query($insertX) === TRUE) 
+                  $insertZ ="INSERT INTO dispenseZ_auto (pillAmt_Z) VALUES ('$getAmt2')";
+                  if ($con->query($insertZ) === TRUE) 
                         {
-                        $resultss="true";
+                        $results3="true";
                         } 
                   else 
                         {
-                        $resultss= "false";
+                        $results3= "false";
                         }
 
                   }
             else
                   {
-                  $result="false";
+                  $result2="false";
                   }
-	echo result;
-  	
+
+	echo $result;
+  	echo $resultss;
 
 
 ?>
