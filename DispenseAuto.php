@@ -15,10 +15,8 @@ if (mysqli_connect_errno())
  // Check whether username or password is set from android
     $time=  date("H:i:00");
     
-     if(isset($_POST['dispense']))
-            {
-		$result='';
-		  
+     if( (isset($_POST['dispense'])) )
+            {		  
 		  // Query database for row exist or not
             $sql = "SELECT pillAmt from dispenseauto_X where time(startTime) <= time('$time') AND time(endTime) >= time('$time') ";
             $result = $con->query($sql);
