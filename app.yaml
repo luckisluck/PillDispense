@@ -23,3 +23,5 @@ handlers:
   script: addRecordAuto.php
 - url: /DispenseManual.php
   script: DispenseManual.php
+- url: /timecheck.php
+  script: timecheck.php
