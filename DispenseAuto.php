@@ -15,9 +15,10 @@ if (mysqli_connect_errno())
  // Check whether username or password is set from android
     $time=date("H:i:00");
     
-     		  
+     		if( (isset($_POST['dispense'])) )
+            {
 		  // Query database for row exist or not
-            $sql = "SELECT pillAmt from dispenseauto_X where CAST(startTime As Time) >= '23:00' AND CAST(endTime As Time) <= '23:00'";
+            $sql = "SELECT pillAmt FROM dispenseauto_X where startTime <= '$time' AND endTime >='$time'";
             $result = $con->query($sql);
             if (mysqli_num_rows($result) > 0) 
                   {
@@ -41,6 +42,61 @@ if (mysqli_connect_errno())
                   }
 
 
+
+
+
+            $sql = "SELECT pillAmt FROM dispenseauto_X where startTime <= '$time' AND endTime >='$time'";
+            $result1 = $con->query($sql);
+            if (mysqli_num_rows($result1) > 0) 
+                  {
+                  while($row1 = mysqli_fetch_assoc($result1))
+                  {
+                  $getAmt1=$row1["pillAmt"];
+                  }   
+                  $insertY ="INSERT INTO dispenseY_auto (pillAmt_Y) VALUES ('$getAmt1')";
+                  if ($con->query($insertY) === TRUE) 
+                        {
+                        $results2="true";
+                        } 
+                  else 
+                        {
+                        $results2= "false";
+                        }
+                  }
+            else
+                  {
+                  $result1="false";
+                  }
+
+         
+
+
+
+         $sql = "SELECT pillAmt FROM dispenseauto_X where startTime <= '$time' AND endTime >='$time'";
+            $result2 = $con->query($sql);
+            if (mysqli_num_rows($result2) > 0) 
+                  {
+                  while($row2 = mysqli_fetch_assoc($result2))
+                  {
+                  $getAmt2=$row2["pillAmt"];
+                  }   
+                  $insertZ ="INSERT INTO dispenseZ_auto (pillAmt_Z) VALUES ('$getAmt2')";
+                  if ($con->query($insertZ) === TRUE) 
+                        {
+                        $results3="true";
+                        } 
+                  else 
+                        {
+                        $results3= "false";
+                        }
+
+                  }
+            else
+                  {
+                  $result2="false";
+                  }
+
 	echo $result;
+            }
 
 ?>
