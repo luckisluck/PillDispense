@@ -13,7 +13,7 @@ if (mysqli_connect_errno())
 
 
 
- $sql = "SELECT * FROM dispenseauto_X ";
+ $sql = "SELECT * FROM dispenser_info ";
             $result = $con->query($sql);
             if (mysqli_num_rows($result) > 0) 
                   {
