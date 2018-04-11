@@ -25,3 +25,5 @@ handlers:
   script: DispenseManual.php
 - url: /timecheck.php
   script: timecheck.php
+- url: /returnTempHumid.php
+  script: returnTempHumid.php
