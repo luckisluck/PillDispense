@@ -20,9 +20,8 @@ if (mysqli_connect_errno())
                   {
                   while($r = mysqli_fetch_assoc($result))
                     {
-                    $row["Temperature"][]=$r;
-                    $row["Humidity"][]=$r;
+                    $rows[]=$r;
                     }
                   print json_encode($rows);     
-                  }      
+                  }
 ?>
