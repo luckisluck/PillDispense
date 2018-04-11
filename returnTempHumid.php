@@ -14,15 +14,15 @@ if (mysqli_connect_errno())
 
 
  $sql = "SELECT * FROM dispenser_info ";
+ $rows = array();
             $result = $con->query($sql);
             if (mysqli_num_rows($result) > 0) 
                   {
-                  while($row = mysqli_fetch_assoc($result))
+                  while($r = mysqli_fetch_assoc($result))
                     {
-                    $getTemp=$row["Temperature"];
-                    $getHumid=$row["Humidity"];
+                    $row["Temperature"][]=$r;
+                    $row["Humidity"][]=$r;
                     }
-                 echo $getTemp;
-                 echo $getHumid;     
+                  print json_encode($rows);     
                   }      
 ?>
