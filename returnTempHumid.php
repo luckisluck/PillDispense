@@ -20,7 +20,7 @@ if (mysqli_connect_errno())
                   {
                   while($r = mysqli_fetch_assoc($result))
                     {
-                    $rows[]=$r;
+                    $rows['all'][]=$r;
                     }
                   print json_encode($rows);     
                   }
