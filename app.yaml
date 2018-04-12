@@ -29,3 +29,5 @@ handlers:
   script: returnTempHumid.php
 - url: /updatepill.php
   script: updatepill.php
+- url: /getpillAmt.php
+  script: getpillAmt.php
