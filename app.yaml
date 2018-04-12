@@ -27,3 +27,5 @@ handlers:
   script: timecheck.php
 - url: /returnTempHumid.php
   script: returnTempHumid.php
+- url: /updatepill.php
+  script: updatepill.php
