@@ -31,3 +31,5 @@ handlers:
   script: updatepill.php
 - url: /getpillAmt.php
   script: getpillAmt.php
+- url: /history.php
+  script: history.php
