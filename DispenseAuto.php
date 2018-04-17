@@ -26,7 +26,7 @@ if (mysqli_connect_errno())
                   {
                   $getAmt=$row["pillAmt"];
                   }   
-                  $insertX ="INSERT INTO dispenseX_auto (pillAmt_X) VALUES ('$getAmt')";
+                  $insertX ="INSERT INTO dispenseX_auto (pillAmt_X,dis_status) VALUES ('$getAmt','P')";
                   if ($con->query($insertX) === TRUE) 
                         {
                         $resultss="true";
@@ -42,9 +42,6 @@ if (mysqli_connect_errno())
                   }
 
 
-
-
-
             $sql = "SELECT pillAmt FROM dispenseauto_Y where startTime <= '$time' AND endTime >='$time'";
             $result1 = $con->query($sql);
             if (mysqli_num_rows($result1) > 0) 
@@ -53,7 +50,7 @@ if (mysqli_connect_errno())
                   {
                   $getAmt1=$row1["pillAmt"];
                   }   
-                  $insertY ="INSERT INTO dispenseY_auto (pillAmt_Y) VALUES ('$getAmt1')";
+                  $insertY ="INSERT INTO dispenseY_auto (pillAmt_Y,dis_status) VALUES ('$getAmt1','P')";
                   if ($con->query($insertY) === TRUE) 
                         {
                         $results2="true";
@@ -80,7 +77,7 @@ if (mysqli_connect_errno())
                   {
                   $getAmt2=$row2["pillAmt"];
                   }   
-                  $insertZ ="INSERT INTO dispenseZ_auto (pillAmt_Z) VALUES ('$getAmt2')";
+                  $insertZ ="INSERT INTO dispenseZ_auto (pillAmt_Z,dis_status) VALUES ('$getAmt2','P')";
                   if ($con->query($insertZ) === TRUE) 
                         {
                         $results3="true";
