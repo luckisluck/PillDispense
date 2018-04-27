@@ -33,3 +33,5 @@ handlers:
   script: getpillAmt.php
 - url: /history.php
   script: history.php
+- url: /delete.php
+  script: delete.php
