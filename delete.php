@@ -1,5 +1,4 @@
 <?php
-date_default_timezone_set('Asia/Bangkok');
 $servername = "35.189.32.80";
 $username = "test";
 $password = "test";
@@ -19,11 +18,11 @@ if (mysqli_connect_errno())
                 $insertX ="DELETE FROM $table WHERE timeName=$Name";
                   if ($con->query($insertX) === TRUE) 
                         {
-                        $results="true";
+                        $result="true";
                         } 
                   else 
                         {
-                        $results= "false";
+                        $result= "false";
                         }
                 }
                   
