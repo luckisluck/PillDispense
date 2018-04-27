@@ -15,7 +15,7 @@ if (mysqli_connect_errno())
                 {
                 $Name= $_POST['name'];
                 $table=$_POST['table'];
-                $insertX ="DELETE FROM $table WHERE timeName=$Name";
+                $insertX ="DELETE FROM $table WHERE timeName='$Name'";
                   if ($con->query($insertX) === TRUE) 
                         {
                         $result="true";
