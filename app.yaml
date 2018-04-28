@@ -35,3 +35,5 @@ handlers:
   script: history.php
 - url: /delete.php
   script: delete.php
+- url: /getallconfig.php
+  script: getallconfig.php
