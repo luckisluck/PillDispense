@@ -46,5 +46,6 @@ if (mysqli_connect_errno())
                     }    
                   }
 
+             #print json_encode($rows);
              print json_encode($rows);
 ?>
